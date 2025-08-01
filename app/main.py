@@ -24,7 +24,7 @@ def get_weather() -> None:
         weather = data["current"]
         country = data["location"]["country"]
         localtime = data["location"]["localtime"]
-        temperature = data["current"]["temperature"]
+        temperature = data["current"]["temp_c"]
         weather_condition = weather["condition"]["text"]
         wind_speed = weather.get("wind_kph")
 
