@@ -35,7 +35,7 @@ def get_weather() -> None:
         print(f"Wind speed: {wind_speed} km/h")
 
     except requests.exceptions.RequestException as e:
-        print(f"Error taking weather data {e}")
+        print(f"Error fetching weather data {e}")
 
 
 if __name__ == "__main__":
