@@ -22,12 +22,18 @@ def get_weather() -> None:
         response.raise_for_status()
         data = response.json()
         weather = data["current"]
+        country = data["location"]["country"]
+        localtime = data["location"]["localtime"]
+        temperature = data["current"]["temperature"]
+        weather_condition = weather["condition"]["text"]
+        wind_speed = weather.get("wind_kph")
 
-        print(f"Paris, {data["location"]["country"]}")
-        print(f"Local time: {data["location"]["localtime"]}")
-        print(f"Temperature: {weather.get("temp_c")}")
-        print(f"{weather["condition"]["text"]}")
-        print(f"Wind speed: {weather.get("wind_kph")} km/h")
+
+        print(f"Paris, {country}")
+        print(f"Local time: {localtime}")
+        print(f"Temperature: {temperature}")
+        print(f"{weather_condition}")
+        print(f"Wind speed: {wind_speed} km/h")
 
     except requests.exceptions.RequestException as e:
         print(f"Error taking weather data {e}")
