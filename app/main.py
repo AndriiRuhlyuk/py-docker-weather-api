@@ -28,7 +28,6 @@ def get_weather() -> None:
         weather_condition = weather["condition"]["text"]
         wind_speed = weather.get("wind_kph")
 
-
         print(f"Paris, {country}")
         print(f"Local time: {localtime}")
         print(f"Temperature: {temperature}")
